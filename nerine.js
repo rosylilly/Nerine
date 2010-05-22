@@ -27,6 +27,8 @@ var Nerine = {
   ASPECT_SDTV: 0,
   ASPECT_HDTV: 1,
   ASPECT_WUXGA: 2,
+  HOOK_BEFORE: 0,
+  HOOK_AFTER: 1,
 };
 
 // ページオブジェクト
@@ -51,6 +53,21 @@ Nerine.reload = function(){
     Nerine.resize();
     Nerine.showMessage('reloaded');
   });
+};
+
+// Hookを追加
+Nerine.addHook = function(method, timing, func){
+  if(this[method] != undefined){
+    var orig = this[method];
+    switch(timing){
+    case this.HOOK_BEFORE:
+      this[method] = function(){ func.apply(this, arguments); orig.apply(this, arguments); };
+      break;
+    case this.HOOK_AFTER:
+      this[method] = function(){ orig.apply(this, arguments); func.apply(this, arguments); };
+      break;
+    };
+  };
 };
 
 // リサイズ
@@ -242,7 +259,8 @@ Nerine.monitorHash = function(){
   if(hs == '') return;
 
   if(/^p(\d+)$/.test(hs)){
-    Nerine.movePage(parseInt(RegExp.$1));
+    var p = parseInt(RegExp.$1);
+    if(p != Nerine.page) Nerine.movePage(p);
     return;
   };
 
