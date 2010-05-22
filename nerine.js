@@ -1,3 +1,14 @@
+/*
+ * Nerine
+ * ==============================
+ * Simple HTML5 Presetation Tool
+ *
+ * Version: 1.0
+ * Author: rosylilly<rosylilly@aduca.org>
+ * License: GPL
+ * Require: jQuery<http://jquery.org/>
+ *
+ */
 
 // Nerineオブジェクト
 var Nerine = {
