@@ -1,0 +1,50 @@
+/*
+ * Common Effect Petal
+ * ============================== 
+ * Type: Effect
+ * Author: rosylilly<rosylilly@aduca.org>
+ *
+ */
+
+/*
+ * Fade Effect
+ */
+[effect=fade] {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+}
+[effect=fade][effected] {
+  opacity: 1;
+}
+
+/*
+ * Zoom In Effect
+ */
+[effect=zoom_in] {
+  zoom: 0%;
+  -webkit-transition: zoom 0.5s linear;
+}
+[effect=zoom_in][effected] {
+  zoom: 100%;
+}
+
+/*
+ * Zoom Out Effect
+ */
+[effect=zoom_out] {
+  zoom: 100%;
+  -webkit-transition: zoom 0.5s linear;
+}
+[effect=zoom_out][effected] {
+  zoom: 0%;
+}
+
+/*
+ * Delay Effect
+ */
+[effect=delay] {
+  display: none;
+}
+[effect=delay][effected] {
+  display: block;
+}
