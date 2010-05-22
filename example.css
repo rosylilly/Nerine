@@ -1,0 +1,42 @@
+
+section {
+  background-color: #fff;
+}
+
+section#title #keydesc {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
+}
+
+section#thankyou p {
+  position: absolute;
+  top: 50%;
+  margin: -0.5em 0 0 0;
+  padding: 0;
+  font-size: 3em;
+  line-height: 1em;
+  width: 100%;
+  text-align: center;
+}
+
+[effect=kawaui] {
+  display: block;
+  position: absolute;
+  bottom: -300px;
+  right: 0;
+  -webkit-transition: bottom 0.5s linear;
+}
+[effect=kawaui][effected] {
+  bottom: 0;
+}
+[effect=delay] {
+  display: none;
+  position: absolute;
+  bottom: 3em;
+  right: 120px;
+  text-align: right;
+}
+[effect=delay][effected] {
+  display: block;
+}

@@ -1,0 +1,41 @@
+
+article, html, body {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+article {
+  display: block;
+  top: 50%;
+  left: 50%;
+}
+
+section {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+}
+
+section.now {
+  opacity: 1;
+  z-index: 1;
+}
+
+article.index_mode section {
+  opacity: 1;
+}
+
+article.index_mode section.now {
+  outline: 3px solid #300;
+}
